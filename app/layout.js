@@ -1,8 +1,11 @@
 import '@styles/globals.css'
+import Nav from '@components/Nav'
+import Provider from '@components/Provider'
 
 export const metadata = {
     title: "Code Snippet",
-    description: "Find useful code snippets"
+    description: "Find useful code snippets",
+    favicon: "/assets/public/favicon.ico"
 }
 const RootLayout = ({children}) => {
   return (
@@ -13,6 +16,7 @@ const RootLayout = ({children}) => {
             </div>
 
             <main className='app'>
+                <Nav />
                 {children}
             </main>
         </body>
