@@ -3,7 +3,7 @@ import Nav from '@components/Nav'
 import Provider from '@components/Provider'
 
 export const metadata = {
-    title: "Code Snippet",
+    title: "course Connect",
     description: "Find useful code snippets",
     favicon: "/assets/public/favicon.ico"
 }
