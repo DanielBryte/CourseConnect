@@ -4,7 +4,7 @@ import Feed from '@components/Feed'
 const Home = () => {
   return (
       <section className="w-full flex-center flex-col">
-         <h1 className="head_text ">Discover and Learn
+         <h1 className="head_text text-center">Discover and Learn
           <br className="max-md:hidden"/>
           <span className="green_gradient text-center"> Top tech courses</span>
          </h1>
