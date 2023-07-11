@@ -12,6 +12,8 @@ const Nav = () => {
     const isUserLoggedIn = true;
 
     const [providers, setProviders] = useState(null);
+
+    const [toggleDropdown, setToggleDropdown] = useState(false);
     useEffect(() => {
         const setProviders = async () => {
             const response = await getProviders();
@@ -22,16 +24,17 @@ const Nav = () => {
         setProviders();
     }, [])
 
+
     return (
         <nav className='flex-between w-full mb-16 pt-3'>
 
 
-            <Link href="/" className='flex font-bold text-xl gap-2 flex-center'>
+            <Link href="/" className='flex items-center font-bold text-xl gap-2'>
                 <Image
                     className='object-obtain'
                     src="/assets/images/logo.png"
-                    width={30}
-                    height={30}
+                    width={35}
+                    height={35}
                     alt='logo'
                 />
                 <p className='logo-text'>Course Connect</p>
@@ -84,18 +87,37 @@ const Nav = () => {
 
 
             {/* Mobile Navigation */}
+
             <div className='sm:hidden flex relative'>
                 {isUserLoggedIn ? (
-                    <div className=''>
+                    <div className='flex'>
                         <Image
+                            className='object-obtain'
                             src="/assets/images/logo.png"
-                            width={37}
-                            height={37}
-                            className='rounded-full'
+                            width={35}
+                            height={35}
                             alt='profile'
-                            onClick={() => { }}
+                            onClick={() => setToggleDropdown((prev) => !prev)}
                         />
-                    </div>) : (<>
+
+                        {toggleDropdown && (
+                            <div className='dropdown'>
+                                <Link href="profile" className='dropdown_link' onClick={() => setToggleDropdown(false)}>
+                                    My Profile
+                                </Link>
+
+                                <Link href="create" className='dropdown_link' onClick={() => setToggleDropdown(false)}>
+                                    Add course
+                                </Link>
+                                <button type='button' className='mt-5 w-full black_btn' onClick={() => { setToggleDropdown(false); signOut(); }}>
+                                    Sign Out
+                                </button>
+                            </div>
+                        )
+                        }
+                    </div>
+                ) : (
+                    <>
                         {providers && Objects.values(providers.map((provider) => {
                             <button
                                 type='button'
@@ -108,9 +130,8 @@ const Nav = () => {
 
                         ))
 
-                        }
-                    </>)
-                }
+                        }</>
+                )}
             </div>
         </nav>
     )
