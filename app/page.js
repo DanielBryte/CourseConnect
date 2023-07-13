@@ -9,7 +9,7 @@ const Home = () => {
           <span className="text-[#131972] text-center"> Top tech courses</span>
          </h1>
          <p className="desc text-center">
-          Course Connect is an open source course aggregator from various industry experts and edtech platforms and, built for techies to aid them discover, learn and build on high quality courses and resources.
+          Course Connect is an open source course aggregator from various industry experts and edtech platforms built for techies to aid them discover, learn, grow, and build on high quality courses and resources.
          </p>
          {/* {Feed} */}
       </section>
