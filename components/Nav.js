@@ -32,9 +32,9 @@ const Nav = () => {
             <Link href="/" className='flex items-center font-bold text-xl gap-2'>
                 <Image
                     className='object-obtain'
-                    src="/assets/images/logo.png"
-                    width={35}
-                    height={35}
+                    src="/assets/images/logo.svg"
+                    width={30}
+                    height={30}
                     alt='logo'
                 />
                 <p className='logo-text'>Course Connect</p>
@@ -57,7 +57,7 @@ const Nav = () => {
 
                         <Link href="/profile">
                             <Image
-                                src="/assets/images/logo.png"
+                                src="/assets/images/logo.svg"
                                 width={37}
                                 height={37}
                                 className='rounded-full'
@@ -93,7 +93,7 @@ const Nav = () => {
                     <div className='flex'>
                         <Image
                             className='object-obtain'
-                            src="/assets/images/logo.png"
+                            src="/assets/images/logo.svg"
                             width={35}
                             height={35}
                             alt='profile'
