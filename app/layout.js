@@ -5,7 +5,6 @@ import Provider from '@components/Provider'
 export const metadata = {
     title: "course Connect",
     description: "Find useful code snippets",
-    favicon: "/assets/public/favicon.ico"
 }
 const RootLayout = ({children}) => {
   return (
