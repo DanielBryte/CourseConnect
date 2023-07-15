@@ -1,9 +1,11 @@
 import '@styles/globals.css'
 import Nav from '@components/Nav'
 import Provider from '@components/Provider'
+import Footer from '@components/Footer'
+
 
 export const metadata = {
-    title: "course Connect",
+    title: "Course Connect",
     description: "Find useful code snippets",
 }
 const RootLayout = ({children}) => {
@@ -20,6 +22,8 @@ const RootLayout = ({children}) => {
                 {children}
             </main>
             </Provider>
+
+            <Footer/>
         </body>
     </html>
   )
