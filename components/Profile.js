@@ -1,7 +1,7 @@
 import PostCard from "./PostCard"
 
 
-const Profile = ({ name, desc, bio, data, handleEdit, handleDelete }) => {
+const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
 return (
             <>
                 <section className="w-full">
