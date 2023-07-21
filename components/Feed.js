@@ -25,17 +25,18 @@ const Feed = () => {
   const [posts, setPosts] = useState([]);
 
 
+  const fetchPosts = async () => {
+    const response = await fetch('/api/create');
+    const data = await response.json();
+
+    setPosts(data);
+  };
+
   useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch('/api/create');
-      const data = await response.json();
-
-      setPosts(data);
-    }
-
-
     fetchPosts();
   }, []);
+
+
 
   const filterPosts = (searchtext) => {
     const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
@@ -84,10 +85,10 @@ const Feed = () => {
 
 
       {searchText ? (
-      <PostCardList
-        data={searchedResults}
-        handleTagClick={handleTagClick}
-      />) : (
+        <PostCardList
+          data={searchedResults}
+          handleTagClick={handleTagClick}
+        />) : (
         <PostCardList
           data={posts}
           handleTagClick={handleTagClick}
