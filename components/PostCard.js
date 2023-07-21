@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
 
-const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
+const PostCard = ({ post, bio, handleEdit, handleDelete, handleTagClick }) => {
   const { data: session } = useSession();
   const pathName = usePathname();
   const router = useRouter();
@@ -42,12 +42,12 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
               width={40}
               height={40}
               className='rounded-full object-contain'
-              src={post.creator.image}
+              src={post.creator?.image}
             />
 
             <div className='flex flex-col'>
               <h3 className='font-satoshi font-semibold text-gray-900'>
-                {post.creator.username}
+                {post.creator?.username}
               </h3>
               <p className='font-inter text-sm text-gray-500'>{post.bio || `I am ${post.creator.username}`}</p>
             </div>
@@ -107,12 +107,12 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             width={40}
             height={40}
             className='rounded-full object-contain'
-            src={post.creator.image}
+            src={post.creator?.image}
           />
 
           <div className='flex flex-col'>
             <h3 className='font-satoshi font-semibold text-gray-900'>
-              {post.creator.username}
+              {post.creator?.username}
             </h3>
             <p className='font-inter text-sm text-gray-500'>
               {bio}
@@ -132,7 +132,7 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
         #{post.tag}
       </p>
 
-      {session?.user.id === post.creator._id && pathName === "/profile" && (
+      {session?.user.id === post.creator?._id && pathName === "/profile" && (
         <div className='mt-5 flex-start gap-3 border-t border-gray-100 pt-3'>
           <p
             className='edit_btn'
