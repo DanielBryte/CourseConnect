@@ -122,7 +122,7 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 
       </div>
 
-      <p className='my-4 font-satoshi text-sm text-gray-700'>{post.resources}</p>
+      <p className='my-4 font-satoshi text-sm text-gray-700'>{post.resource}</p>
 
 
       <p
