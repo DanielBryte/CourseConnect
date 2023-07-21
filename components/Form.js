@@ -34,7 +34,7 @@ const Form = ({ type, post, setPost, submitting, addResource }) => {
         <label>
           <span className="font-satoshi font-semibold text-base ">
             Choose field
-            <span> (#webdevelopement, #ui/ux design...)</span>
+            <span> (webdevelopement, ui/ux design...)</span>
           </span>
 
           <input
