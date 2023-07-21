@@ -7,12 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'xs': ['0.78rem', {
+          lineHeight: '1rem',
+          letterSpacing: '-0.001em',
+          fontWeight: '400',
+        }],
+      },
       fontFamily: {
         satoshi: ['Satoshi', 'sans-serif'],
         inter: ['Inter', 'sans-serif']
       },
       colors: {
-        'primary-orange': '#FF5722',
+        'primary': '#131972',
+        'primaryHover': '#1E2586'
       }
     },
   },
