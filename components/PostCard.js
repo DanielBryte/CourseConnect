@@ -49,9 +49,7 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
               <h3 className='font-satoshi font-semibold text-gray-900'>
                 {post.creator.username}
               </h3>
-              <p className='font-inter text-xs text-gray-800'>
-                Open source resource aggregator for techies
-              </p>
+              <p className='font-inter text-sm text-gray-500'>{post.bio || `I am ${post.creator.username}`}</p>
             </div>
           </div>
 
@@ -63,7 +61,7 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
               {part}
 
               {matches[index] && (
-                <a className="pt-0.5 blue" target="_blank" href={matches[index]}>{matches[index]}</a>
+                <a className="pt-0.5 blue break-words" target="_blank" href={matches[index]}>{matches[index]}</a>
               )}
             </p>
           ))}
@@ -117,7 +115,7 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
               {post.creator.username}
             </h3>
             <p className='font-inter text-sm text-gray-500'>
-              {post.bio}
+              {bio}
             </p>
           </div>
         </div>
