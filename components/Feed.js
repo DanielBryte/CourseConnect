@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import PostCard from "./PostCard";
 
+
 const PostCardList = ({ data, handleTagClick }) => {
   return (
     <div className='mt-16 post_layout'>
@@ -24,6 +25,7 @@ const Feed = () => {
 
   const [posts, setPosts] = useState([]);
 
+  useEffect(() => {
 
   const fetchPosts = async () => {
     const response = await fetch('/api/create');
@@ -32,7 +34,6 @@ const Feed = () => {
     setPosts(data);
   };
 
-  useEffect(() => {
     fetchPosts();
   }, []);
 

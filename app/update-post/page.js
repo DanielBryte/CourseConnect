@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-
 import Form from "@components/Form";
+import { useSession } from "next-auth/react";
 
 const UpdatePost = () => {
     const router = useRouter();
+    const { data: session } = useSession();
     const searchParams = useSearchParams();
     const postId = searchParams.get("id");
     const [post, setPost] = useState({ resource: "", tag: "", });
@@ -30,17 +31,17 @@ const UpdatePost = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        if (!postId) return alert("PostId not found");
+        if (!postId && !session?.user.Id)  return alert("PostId not found");
 
         try {
-            const response = await fetch(`/api/create/${postId}`, 
-            {
-                method: 'PATCH',
-                body: JSON.stringify({
-                    resource: post.resource,
-                    tag: post.tag,
-                }),
-            });
+            const response = await fetch(`/api/create/${postId}`,
+                {
+                    method: 'PATCH',
+                    body: JSON.stringify({
+                        resource: post.resource,
+                        tag: post.tag,
+                    }),
+                });
 
             if (response.ok) {
                 router.push('/profile');
@@ -61,6 +62,7 @@ const UpdatePost = () => {
             submitting={submitting}
             addResource={updatePost}
         />
+
     );
 };
 
