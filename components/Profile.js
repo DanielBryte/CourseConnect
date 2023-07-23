@@ -18,7 +18,7 @@ return (
                       }
                     </div> */}
 
-                    <div className='mt-10 prompt_layout'>
+                    <div className='mt-10 post_layout'>
                         {data.map((post) => (
                             <PostCard
                                 key={post._id}

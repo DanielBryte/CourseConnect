@@ -5,7 +5,7 @@ import PostCard from "./PostCard";
 
 const PostCardList = ({ data, handleTagClick }) => {
   return (
-    <div className='mt-16 prompt_layout'>
+    <div className='mt-16 post_layout'>
       {data.map((post) => (
         <PostCard
           key={post._id}
@@ -71,18 +71,19 @@ const Feed = () => {
 
 
   return (
-    <section className="feed">
-      <form className="relative w-full flex-center">
-        <input
-          className="search_input peer"
-          type="text"
-          placeholder="Search for resources..."
-          value={searchText}
-          onChange={handleSearchChange}
-          required
-        />
-      </form>
-
+    <section className="w-full">
+      <div className="feed">
+        <form className="relative w-full flex-center">
+          <input
+            className="search_input peer"
+            type="text"
+            placeholder="Search for resources, tags or users..."
+            value={searchText}
+            onChange={handleSearchChange}
+            required
+          />
+        </form>
+      </div>
 
       {searchText ? (
         <PostCardList

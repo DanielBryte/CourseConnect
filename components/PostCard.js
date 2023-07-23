@@ -31,7 +31,7 @@ const PostCard = ({ post, bio, handleEdit, handleDelete, handleTagClick }) => {
     const textParts = post.resource.split(httpsLinkRegex);
 
     return (
-      <div className='prompt_card'>
+      <div className='post_card'>
         <div className='flex justify-between items-start gap-5'>
           <div
             className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
