@@ -2,8 +2,7 @@ import '@styles/globals.css'
 import Nav from '@components/Nav'
 import Provider from '@components/Provider'
 import Footer from '@components/Footer'
-import { Suspense } from 'react'
-import Loading from './loading'
+
 
 
 export const metadata = {
@@ -21,9 +20,7 @@ const RootLayout = ({ children }) => {
 
                     <main className='app'>
                         <Nav/>
-                        <Suspense fallback={<Loading />}>
                             {children}
-                        </Suspense>
                     </main>
                 </Provider>
                 <Footer />
