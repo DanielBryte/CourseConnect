@@ -129,7 +129,7 @@ const PostCard = ({ post, bio, handleEdit, handleDelete, handleTagClick }) => {
         className='font-inter text-sm blue_gradient cursor-pointer'
         onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
-        #{post.tag}
+        {post.tag.includes("#") ? post.tag : `#${post.tag}`}
       </p>
 
       {session?.user.id === post.creator?._id && pathName === "/profile" && (
