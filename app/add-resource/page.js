@@ -3,7 +3,7 @@
 import Form from "@components/Form";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 
@@ -19,6 +19,19 @@ const AddResource = () => {
         link: "",
         tag: ""
     })
+
+
+
+    // Redirect to home page if no session
+
+    useEffect(() => {
+        if (!session) {
+            router.push("/");
+        }
+    }, [session, router]);
+
+
+
 
     const createPost = async (e) => {
         e.preventDefault();

@@ -27,11 +27,20 @@ const UpdatePost = () => {
     }, [postId]);
 
 
+    // Redirect to home page if no session
+
+    useEffect(() => {
+        if (!session) {
+            router.push("/");
+        }
+    }, [session, router]);
+
+
     const updatePost = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        if (!postId && !session?.user.Id)  return alert("PostId not found");
+        if (!postId) return alert("PostId not found");
 
         try {
             const response = await fetch(`/api/create/${postId}`,
