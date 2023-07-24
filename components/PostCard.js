@@ -28,7 +28,7 @@ const PostCard = ({ post, bio, handleEdit, handleDelete, handleTagClick }) => {
 
   // If there are matches, replace them with clickable links
   if (matches) {
-    const textParts = post.resource.split(httpsLinkRegex);
+    const textParts = post?.resource.split(httpsLinkRegex);
 
     return (
       <div className='post_card'>
@@ -49,7 +49,7 @@ const PostCard = ({ post, bio, handleEdit, handleDelete, handleTagClick }) => {
               <h3 className='font-satoshi font-semibold text-gray-900'>
                 {post.creator?.username}
               </h3>
-              <p className='font-inter text-sm text-gray-500'>{post.bio || `I am ${post.creator.username}`}</p>
+              <p className='font-inter text-sm text-gray-500'>{post?.bio || `I am ${post.creator?.username}`}</p>
             </div>
           </div>
 
@@ -74,7 +74,7 @@ const PostCard = ({ post, bio, handleEdit, handleDelete, handleTagClick }) => {
           #{post.tag}
         </p>
 
-        {session?.user.id === post.creator._id && pathName === "/profile" && (
+        {session?.user.id === post.creator?._id && pathName === "/profile" && (
           <div className='mt-5 flex-start gap-3 border-t border-gray-100 pt-3'>
             <p
               className='edit_btn'
