@@ -27,13 +27,16 @@ const Feed = () => {
 
   useEffect(() => {
 
-  const fetchPosts = async () => {
-    const response = await fetch('/api/create');
-    const data = await response.json();
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch('/api/create');
+        const data = await response.json();
 
-    setPosts(data);
-  };
-
+        setPosts(data);
+      } catch (error) {
+        fetchPosts();
+      }
+    };
     fetchPosts();
   }, []);
 
