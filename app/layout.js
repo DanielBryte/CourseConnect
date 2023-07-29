@@ -14,10 +14,6 @@ const RootLayout = ({ children }) => {
         <html lang='en'>
             <body>
                 <Provider>
-                    <div className='main'>
-                        <div className='gradient' />
-                    </div>
-
                     <main className='app'>
                         <Nav/>
                             {children}
