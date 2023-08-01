@@ -64,14 +64,15 @@ const UpdatePost = () => {
 
 
     return (
-        <Form
-            type='Edit'
-            post={post}
-            setPost={setPost}
-            submitting={submitting}
-            addResource={updatePost}
-        />
-
+        <section className="app">
+            <Form
+                type='Edit'
+                post={post}
+                setPost={setPost}
+                submitting={submitting}
+                addResource={updatePost}
+            />
+        </section>
     );
 };
 

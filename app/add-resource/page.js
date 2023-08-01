@@ -59,13 +59,16 @@ const AddResource = () => {
         }
     }
     return (
-        <Form
-            type="Post"
-            post={post}
-            setPost={setPost}
-            submitting={submitting}
-            addResource={createPost}
-        />
+        <section className="app">
+            <Form
+                type="Post"
+                post={post}
+                setPost={setPost}
+                submitting={submitting}
+                addResource={createPost}
+            />
+        </section>
+
     )
 }
 
