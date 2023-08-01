@@ -4,7 +4,7 @@ import PostCard from "./PostCard"
 const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
 return (
             <>
-                <section className="w-full">
+                <section className="max-w-7xl">
                     <h1 className="head_text text_left">
                         <span className="blue">{name} profile</span>
                     </h1>
