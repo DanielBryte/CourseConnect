@@ -20,7 +20,7 @@ const PostCard = ({ post, bio, handleEdit, handleDelete, handleTagClick }) => {
   };
 
 
-  
+
 
   // Regular expression to match URLs with HTTPS protocol
   const httpsLinkRegex = /https:\/\/\S+/g;
@@ -34,22 +34,21 @@ const PostCard = ({ post, bio, handleEdit, handleDelete, handleTagClick }) => {
       <div className='post_card'>
         <div className='flex justify-between items-start gap-5'>
           <div
-            className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
+            className='flex-1 flex justify-start items-center gap-2.5 cursor-pointer'
             onClick={handleProfileClick}
           >
             <Image
               alt='user_image'
-              width={40}
-              height={40}
+              width={22}
+              height={22}
               className='rounded-full object-contain'
               src={post.creator?.image}
             />
 
             <div className='flex flex-col'>
-              <h3 className='font-satoshi font-semibold text-gray-900'>
+              <h3 className='font-satoshi text-md font-semibold text-gray-900'>
                 {post.creator?.username}
               </h3>
-              <p className='font-inter text-sm text-gray-500'>{post?.bio || `I am ${post.creator?.username}`}</p>
             </div>
           </div>
 
@@ -65,7 +64,7 @@ const PostCard = ({ post, bio, handleEdit, handleDelete, handleTagClick }) => {
               )}
             </p>
           ))}
-          </div>
+        </div>
 
         <p
           className='font-inter text-sm blue cursor-pointer'
