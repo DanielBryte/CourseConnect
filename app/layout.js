@@ -14,12 +14,12 @@ const RootLayout = ({ children }) => {
         <html lang='en'>
             <body>
                 <Provider>
-                    <main className='app'>
+                    <main>
                         <Nav/>
                             {children}
                     </main>
+                    <Footer/>
                 </Provider>
-                <Footer />
             </body>
         </html>
     )

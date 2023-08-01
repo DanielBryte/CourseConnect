@@ -9,7 +9,7 @@
 */
 
 .main {
-  width: 100vw;
+  width: 100vw !important;
   min-height: 100vh;
   position: fixed;
   display: flex;
@@ -39,7 +39,10 @@
   filter: invert(1);
 }
 
-
+.bg-style{
+  background: #131972;
+  width: 100%;
+}
 
 @media screen and (max-width: 640px) {
   .main {
@@ -50,7 +53,7 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply max-w-7xl relative z-10 flex justify-center items-center flex-col mx-auto sm:px-16 px-6;
 }
 
 
@@ -82,7 +85,7 @@
 
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-white text-center sm:text-6xl;
 }
 
 
@@ -95,7 +98,7 @@
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+  @apply mt-5 font-thin text-lg text-white sm:text-xl max-w-2xl;
 }
 
 .search_input {
