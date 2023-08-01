@@ -53,7 +53,7 @@
 /* Tailwind Styles */
 
 .app {
-  @apply max-w-7xl relative z-10 flex justify-center items-center flex-col mx-auto sm:px-16 px-6;
+  @apply max-w-7xl z-10 flex justify-center items-start flex-col mx-auto sm:px-16 px-6;
 }
 
 
@@ -85,7 +85,7 @@
 
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-white text-center sm:text-6xl;
+  @apply mt-5 font-extrabold leading-[1.15] text-white sm:text-5xl text-4xl ;
 }
 
 
@@ -97,8 +97,20 @@
   @apply text-primary
 }
 
+
+@layer components {
+  .profile-div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+}
 .desc {
   @apply mt-5 font-thin text-lg text-white sm:text-xl max-w-2xl;
+}
+
+.p-desc {
+  @apply mt-5 font-thin text-lg text-gray-800 sm:text-xl max-w-2xl;
 }
 
 .search_input {
@@ -112,7 +124,7 @@
 /* Post Layout */
 
 .post_layout{
-  @apply py-12 grid gap-x-16 gap-y-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3;
+  @apply py-12 max-w-7xl grid gap-x-16 gap-y-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3;
 
 }
 

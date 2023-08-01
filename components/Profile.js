@@ -4,11 +4,14 @@ import PostCard from "./PostCard"
 const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
 return (
             <>
-                <section className="max-w-7xl">
-                    <h1 className="head_text text_left">
+                <section className="app">
+                    <div className="profile-div">
+                    <h1 className="head_text">
                         <span className="blue">{name} profile</span>
                     </h1>
-                    <p className="desc text-left">{desc}</p>
+                    <p className="p-desc">{desc}</p>
+                    </div>
+
 
                     {/* <div className="flex flex-col md:flex-row justify-between desc gap-2 md:gap-3 border border-gray-400 rounded-lg py-3 px-1.5 -mx-1">
                        <span className="text-xl font-semibold blue">Bio:</span> 
@@ -18,7 +21,7 @@ return (
                       }
                     </div> */}
 
-                    <div className='mt-10 post_layout'>
+                    <div className='mt-6 post_layout'>
                         {data.map((post) => (
                             <PostCard
                                 key={post._id}

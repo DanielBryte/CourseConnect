@@ -89,7 +89,7 @@ const Home = () => {
 
     <section className="flex-center w-full flex-col">
       <div className='bg-style py-8'>
-        <h1 className="head_text">Share and Discover
+        <h1 className="head_text text-center">Share and Discover
           <br className="max-md:hidden" />
           <span className="text-center"> Top Tech Courses</span>
         </h1>
